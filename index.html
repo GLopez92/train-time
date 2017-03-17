@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <title>Train Schedule</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="jumbotron">
+    <h1 class="text-center">Train Schedule</h1>
+    <h2 class="text-center">( Train Alerts )</h2>
+  </div>
+
+  <!-- Train schedule table -->
+  <div class="panel panel-primary">
+      <div class="panel-heading">Train Schdule</div>
+        <div class="panel-body"></div>
+        <table class="table" id="train-table">
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+          <tr>
+            <td class="train-name">Train Name</td>
+            <td class="destination">Destination</td>
+            <td class="start-date">Frist Train Time </td>
+            <td class="next-arrival">Next Arrival</td>
+            <td class="minutes-away">Minutes Away</td>
+          </tr>
+        </table>
+  </div>
+
+  <!-- Add Train form -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">Add Train</div>
+    <div class="panel-body"></div>
+    <form>
+      <div class="form-group" style="margin: 5px;">
+        <label for="Train Name">Train Name</label>
+        <input type="text" class="form-control" id="add-train">
+      </div>
+
+      <div class="form-group" style="margin: 5px;">
+        <label for="Destination">Destination</label>
+        <input type="text" class="form-control" id="add-destination">
+      </div>
+
+      <div class="form-group" style="margin: 5px;">
+        <label for="Train Time">Frist Train Time ( HH:mm - military time )</label>
+        <input type="text" class="form-control" id="add-date">
+      </div>
+
+      <div class="form-group" style="margin: 5px;">
+        <label for="frequency">Frequency</label>
+        <input type="text" class="form-control" id="add-frequency">
+      </div>
+
+      <button type="submit" class="bt btn-primary" id="submit-button" style="margin: 5px;">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+<!-- Moment.js CDN -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
