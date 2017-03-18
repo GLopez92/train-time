@@ -33,12 +33,35 @@
 
     });
 
+    function update(){
+
+   
+      setInterval(function(){
+
+        var updateMinsAways = $(".minutes-away");
+
+        updateMinsAways.each(function(){
+          var timeNow = parseint($(this).text());
+          var newTime = timeNow - 1;
+          $(this).text(newTime)
+
+        })
+
+
+
+      }, 60000);
+
+
+    };
+
+    console.log(update());
+
     database.ref().on("child_added", function(childSnapshot) {
 
-    console.log(childSnapshot.val().name);
-    console.log(childSnapshot.val().desination);
-    console.log(childSnapshot.val().startDate);
-    console.log(childSnapshot.val().frequency);
+    // console.log(childSnapshot.val().name);
+    // console.log(childSnapshot.val().desination);
+    // console.log(childSnapshot.val().startDate);
+    // console.log(childSnapshot.val().frequency);
 
   
 
@@ -78,3 +101,7 @@
     $("#train-table tbody").append(markup);
 
    });
+
+  update();
+
+
